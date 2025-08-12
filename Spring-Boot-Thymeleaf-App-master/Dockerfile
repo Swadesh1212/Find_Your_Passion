@@ -1,12 +1,14 @@
-# 1st stage: Build the JAR
-FROM maven:3.9.5-openjdk-21 AS build
-WORKDIR /app
-COPY . .
-RUN mvn clean package -DskipTests
+# Use Eclipse Temurin JDK 21 base image (Ubuntu Jammy)
+FROM eclipse-temurin:21-jdk-jammy
 
-# 2nd stage: Run the JAR
-FROM openjdk:21-jdk-slim
+# Set working directory inside the container
 WORKDIR /app
-COPY --from=build /app/target/Spring-Boot-Thymeleaf-App-master-0.0.1-SNAPSHOT.jar Hobbie.jar
+
+# Copy the built jar file into the container
+COPY target/hobbie-0.0.1-SNAPSHOT.jar app.jar
+
+# Expose port 8080 (adjust if your app runs on a different port)
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "Hobbie.jar"]
+
+# Run the Spring Boot application
+ENTRYPOINT ["java", "-jar", "app.jar"]
