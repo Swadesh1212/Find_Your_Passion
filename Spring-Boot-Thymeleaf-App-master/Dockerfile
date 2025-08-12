@@ -1,25 +1,30 @@
-# 1st stage: Build the JAR
-FROM maven:3.9.6-eclipse-temurin-21 AS build
+# Stage 1: Build the application
+FROM maven:3.9.6-eclipse-temurin-17 AS builder
 
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy the Maven project files into the container
-COPY Find_Your_Passion/Spring-Boot-Thymeleaf-App-master/ .
+# Copy only pom.xml and download dependencies first (cache layer)
+COPY pom.xml .
+COPY .mvn .mvn
+COPY mvnw .
+RUN chmod +x mvnw
+RUN ./mvnw dependency:go-offline
 
-# Build the application without running tests
-RUN mvn clean package -DskipTests
+# Copy the source code
+COPY src ./src
 
-# 2nd stage: Run the JAR
-FROM openjdk:21-jdk-slim
+# Build the application
+RUN ./mvnw clean package -DskipTests
 
+# Stage 2: Run the application
+FROM eclipse-temurin:17-jdk
+
+# Set working directory for running the app
 WORKDIR /app
 
-# Copy the JAR file from the build stage
-COPY --from=build /app/target/*.jar app.jar
+# Copy the jar file from the builder stage
+COPY --from=builder /app/target/*.jar app.jar
 
-# Expose port 8080
-EXPOSE 8080
-
-# Run the JAR
+# Run the jar file
 ENTRYPOINT ["java", "-jar", "app.jar"]
