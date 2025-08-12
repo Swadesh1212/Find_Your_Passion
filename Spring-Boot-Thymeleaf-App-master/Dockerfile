@@ -4,14 +4,10 @@ FROM maven:3.9.6-eclipse-temurin-21 AS build
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy pom.xml and download dependencies first (for caching)
-COPY pom.xml .
-RUN mvn dependency:go-offline
+# Copy the Maven project files into the container
+COPY Find_Your_Passion/Spring-Boot-Thymeleaf-App-master/ .
 
-# Copy the rest of the project files
-COPY src ./src
-
-# Package the application
+# Build the application without running tests
 RUN mvn clean package -DskipTests
 
 # 2nd stage: Run the JAR
@@ -19,11 +15,11 @@ FROM openjdk:21-jdk-slim
 
 WORKDIR /app
 
-# Copy only the built JAR from the previous stage
-COPY --from=build /app/target/*.jar Hobbie.jar
+# Copy the JAR file from the build stage
+COPY --from=build /app/target/*.jar app.jar
 
-# Expose the port your app runs on
+# Expose port 8080
 EXPOSE 8080
 
-# Run the application
-ENTRYPOINT ["java", "-jar", "Hobbie.jar"]
+# Run the JAR
+ENTRYPOINT ["java", "-jar", "app.jar"]
