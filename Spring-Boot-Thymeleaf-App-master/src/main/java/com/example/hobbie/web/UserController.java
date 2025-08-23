@@ -244,7 +244,7 @@ public class UserController {
                 businessOwner.setUsername(user.getUsername());
                 businessOwner.setPassword(this.passwordEncoder.encode(updateBusinessBindingModel.getPassword()));
                 businessOwner.setRoles(user.getRoles());
-                this.userService.saveUpdatedUser(businessOwner);
+                this.userService.saveUpdatedBussinessOwner(businessOwner);
                 return "redirect:/users/business-account-info";
             }
         } else {

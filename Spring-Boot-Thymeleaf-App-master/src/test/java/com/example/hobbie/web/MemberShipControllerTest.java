@@ -17,7 +17,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
-class AboControllerTest {
+class MemberShipControllerTest {
     private static final String ABO_CONTROLLER_PREFIX = "/my-abos";
 
     @Autowired

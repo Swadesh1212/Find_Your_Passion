@@ -20,7 +20,7 @@ import java.text.ParseException;
 import java.util.List;
 
 @Controller
-public class AboController {
+public class MemberShipController {
     private final UserService userService;
     private final AboService aboService;
     private final HobbyService hobbyService;
@@ -28,7 +28,7 @@ public class AboController {
     private final ModelMapper modelMapper;
 
     @Autowired
-    public AboController(UserService userService, AboService aboService, HobbyService hobbyService, EntryService entryService, ModelMapper modelMapper) {
+    public MemberShipController(UserService userService, AboService aboService, HobbyService hobbyService, EntryService entryService, ModelMapper modelMapper) {
         this.userService = userService;
         this.aboService = aboService;
         this.hobbyService = hobbyService;

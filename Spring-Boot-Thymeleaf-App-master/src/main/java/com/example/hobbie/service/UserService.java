@@ -22,7 +22,7 @@ public interface UserService {
 
     BusinessOwner registerBusiness(RegisterBusinessServiceModel map);
 
-    BusinessOwner saveUpdatedUser(BusinessOwner businessOwner);
+    BusinessOwner saveUpdatedBussinessOwner(BusinessOwner businessOwner);
 
     AppClient saveUpdatedUserClient(AppClient appClient);
 

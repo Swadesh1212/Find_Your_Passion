@@ -118,7 +118,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public BusinessOwner saveUpdatedUser(BusinessOwner businessOwner) {
+    public BusinessOwner saveUpdatedBussinessOwner(BusinessOwner businessOwner) {
         return this.businessOwnerRepository.save(businessOwner);
     }
 
