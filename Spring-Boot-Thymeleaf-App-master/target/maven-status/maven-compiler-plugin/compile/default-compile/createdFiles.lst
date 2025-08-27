@@ -9,7 +9,6 @@ com\example\hobbie\model\entities\BaseEntity.class
 META-INF\spring-configuration-metadata.json
 com\example\hobbie\service\TestService.class
 com\example\hobbie\view\HobbyCardViewModel.class
-com\example\hobbie\web\UserController.class
 com\example\hobbie\service\impl\LocationServiceImpl.class
 com\example\hobbie\service\EntryService.class
 com\example\hobbie\view\EntryViewModel.class
@@ -18,11 +17,8 @@ com\example\hobbie\service\impl\UserRoleServiceImpl.class
 com\example\hobbie\model\binding\UpdateClientBindingModel.class
 com\example\hobbie\view\HobbyViewModel.class
 com\example\hobbie\service\impl\UserServiceImpl.class
-com\example\hobbie\web\HomeController.class
 com\example\hobbie\model\entities\UserRoleEntity.class
-com\example\hobbie\web\ShoppingCartController.class
 com\example\hobbie\service\AboService.class
-com\example\hobbie\web\MemberShipController.class
 com\example\hobbie\model\binding\UpdateBusinessBindingModel.class
 com\example\hobbie\model\entities\Test.class
 com\example\hobbie\service\CategoryService.class
@@ -50,7 +46,6 @@ com\example\hobbie\config\CloudConfig.class
 com\example\hobbie\model\entities\enums\CategoryNameEnum.class
 com\example\hobbie\service\CloudinaryService.class
 com\example\hobbie\model\repostiory\AboRepository.class
-com\example\hobbie\web\HobbyController.class
 com\example\hobbie\model\binding\RegisterBusinessBindingModel.class
 com\example\hobbie\model\entities\enums\UserRoleEnum.class
 com\example\hobbie\model\repostiory\EntryRepository.class
@@ -61,7 +56,6 @@ com\example\hobbie\model\binding\UpdateHobbyBindingModel.class
 com\example\hobbie\model\entities\enums\GenderEnum.class
 com\example\hobbie\model\entities\AppClient.class
 com\example\hobbie\service\UserService.class
-com\example\hobbie\web\TestController.class
 com\example\hobbie\model\entities\enums\LocationEnum.class
 com\example\hobbie\model\repostiory\BusinessOwnerRepository.class
 com\example\hobbie\service\impl\EntryServiceImpl.class
