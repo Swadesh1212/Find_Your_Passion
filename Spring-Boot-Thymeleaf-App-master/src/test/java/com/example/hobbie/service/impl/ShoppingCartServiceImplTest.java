@@ -91,7 +91,7 @@ class ShoppingCartServiceImplTest {
         hobby = new Hobby();
         hobby.setImgUrl("img_url");
         Location location = new Location();
-        location.setName(LocationEnum.ZURICH);
+        location.setName(LocationEnum.KURUKSHETRA);
         hobby.setLocation(location);
         hobby.setBusinessOwner(businessOwner);
         hobby.setPrice(new BigDecimal("100"));

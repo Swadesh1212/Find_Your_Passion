@@ -1,4 +1,4 @@
-package com.example.hobbie.web;
+package com.example.hobbie.controller;
 
 import com.example.hobbie.model.entities.enums.CategoryNameEnum;
 import com.example.hobbie.model.entities.enums.LocationEnum;
@@ -43,7 +43,7 @@ class HobbyControllerTest {
                         param("description", "bla").
                         param("category", CategoryNameEnum.ACTIVE.name()).
                         param("price", String.valueOf(new BigDecimal("100"))).
-                        param("location", LocationEnum.ZURICH.name()).
+                        param("location", LocationEnum.KURUKSHETRA.name()).
                         with(csrf())).
                 andExpect(status().is3xxRedirection());
     }

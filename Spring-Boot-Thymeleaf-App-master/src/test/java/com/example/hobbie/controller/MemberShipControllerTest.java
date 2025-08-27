@@ -1,4 +1,4 @@
-package com.example.hobbie.web;
+package com.example.hobbie.controller;
 
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;

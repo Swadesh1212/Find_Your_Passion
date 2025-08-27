@@ -1,4 +1,4 @@
-package com.example.hobbie.web;
+package com.example.hobbie.controller;
 
 import com.example.hobbie.config.UserInterceptor;
 import com.example.hobbie.model.entities.Abo;

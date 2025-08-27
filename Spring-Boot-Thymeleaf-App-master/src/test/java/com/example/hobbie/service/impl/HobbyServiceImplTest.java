@@ -58,10 +58,10 @@ class HobbyServiceImplTest {
         hobby.setId(1L);
         HobbyServiceModel hobbyServiceModel = new HobbyServiceModel();
         hobbyServiceModel.setCategory(CategoryNameEnum.ACTIVE);
-        hobbyServiceModel.setLocation(LocationEnum.ZURICH);
+        hobbyServiceModel.setLocation(LocationEnum.KURUKSHETRA);
         hobby.setImgUrl("img_url");
         Location location = new Location();
-        location.setName(LocationEnum.ZURICH);
+        location.setName(LocationEnum.KURUKSHETRA);
         hobby.setLocation(location);
         hobby.setBusinessOwner(businessOwner);
         hobby.setPrice(new BigDecimal("100"));
@@ -82,7 +82,7 @@ class HobbyServiceImplTest {
 
         when(userServiceTest.findCurrentUserBusinessOwner()).
                 thenReturn(businessOwner);
-        when(locationServiceTest.getLocationByName(LocationEnum.ZURICH)).
+        when(locationServiceTest.getLocationByName(LocationEnum.KURUKSHETRA)).
                 thenReturn(location);
         when(mockHobbyRepository.findById(1L)).
                 thenReturn(Optional.of(hobby));

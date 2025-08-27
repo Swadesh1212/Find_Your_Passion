@@ -2,9 +2,7 @@ package com.example.hobbie.service.impl;
 
 import com.example.hobbie.handler.NotFoundException;
 import com.example.hobbie.model.entities.Location;
-import com.example.hobbie.model.entities.UserRoleEntity;
 import com.example.hobbie.model.entities.enums.LocationEnum;
-import com.example.hobbie.model.entities.enums.UserRoleEnum;
 import com.example.hobbie.model.repostiory.LocationRepository;
 import com.example.hobbie.service.LocationService;
 import org.junit.jupiter.api.Assertions;
@@ -17,7 +15,6 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 class LocationServiceImplTest {
     private  LocationRepository mockLocationRepository;
@@ -29,7 +26,7 @@ class LocationServiceImplTest {
         mockLocationRepository = mock(LocationRepository.class);
         locationServiceToTest =new LocationServiceImpl(mockLocationRepository);
         location = new Location();
-        location.setName(LocationEnum.ZURICH);
+        location.setName(LocationEnum.KURUKSHETRA);
 
 
 
@@ -38,9 +35,9 @@ class LocationServiceImplTest {
     @Test
     void getLocationByName_should_work() {
 
-        Mockito.when(mockLocationRepository.findByName(LocationEnum.ZURICH)).
+        Mockito.when(mockLocationRepository.findByName(LocationEnum.KURUKSHETRA)).
                 thenReturn(Optional.of(location));
-        Location locationByName = locationServiceToTest.getLocationByName(LocationEnum.ZURICH);
+        Location locationByName = locationServiceToTest.getLocationByName(LocationEnum.KURUKSHETRA);
 
         assertEquals(location.getName(),locationByName.getName());
     }
@@ -49,7 +46,7 @@ class LocationServiceImplTest {
 
       Assertions.assertThrows(
                 NotFoundException.class,
-                () -> locationServiceToTest.getLocationByName(LocationEnum.ZURICH));
+                () -> locationServiceToTest.getLocationByName(LocationEnum.KURUKSHETRA));
     }
 
     //

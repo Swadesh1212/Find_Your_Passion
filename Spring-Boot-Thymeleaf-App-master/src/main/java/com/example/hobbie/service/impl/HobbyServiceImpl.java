@@ -127,7 +127,7 @@ public class HobbyServiceImpl implements HobbyService {
             climbing.setBusinessOwner(this.userService.findBusinessOwnerById(3L));
             climbing.setPrice(new BigDecimal("73"));
             climbing.setImgUrl("https://res.cloudinary.com/duyxug7zo/image/upload/v1649757915/nbikbguhhu39gyc3pynj.jpg");
-            climbing.setLocation(this.locationService.getLocationByName(LocationEnum.ZURICH));
+            climbing.setLocation(this.locationService.getLocationByName(LocationEnum.KURUKSHETRA));
             offers.add(climbing);
             this.hobbyRepository.save(climbing);
             //2
@@ -141,7 +141,7 @@ public class HobbyServiceImpl implements HobbyService {
             dancing.setBusinessOwner(this.userService.findBusinessOwnerById(3L));
             dancing.setPrice(new BigDecimal("62.40"));
             dancing.setImgUrl("https://res.cloudinary.com/duyxug7zo/image/upload/v1649758018/fzmoxrdvkvxtlj5kyjnu.jpg");
-            dancing.setLocation(this.locationService.getLocationByName(LocationEnum.ZURICH));
+            dancing.setLocation(this.locationService.getLocationByName(LocationEnum.KURUKSHETRA));
             offers.add(dancing);
             this.hobbyRepository.save(dancing);
             //3
@@ -159,7 +159,7 @@ public class HobbyServiceImpl implements HobbyService {
             horseRiding.setBusinessOwner(this.userService.findBusinessOwnerById(3L));
             horseRiding.setPrice(new BigDecimal("162.20"));
             horseRiding.setImgUrl("https://res.cloudinary.com/duyxug7zo/image/upload/v1649758109/rokfwfwpunitzyphjd6s.jpg");
-            horseRiding.setLocation(this.locationService.getLocationByName(LocationEnum.ZURICH));
+            horseRiding.setLocation(this.locationService.getLocationByName(LocationEnum.KURUKSHETRA));
             offers.add(horseRiding);
             this.hobbyRepository.save(horseRiding);
 
@@ -175,7 +175,7 @@ public class HobbyServiceImpl implements HobbyService {
             yoga.setBusinessOwner(this.userService.findBusinessOwnerById(3L));
             yoga.setPrice(new BigDecimal("52.40"));
             yoga.setImgUrl("https://res.cloudinary.com/duyxug7zo/image/upload/v1649758170/hsigtcgta9pwbieeg2oo.jpg");
-            yoga.setLocation(this.locationService.getLocationByName(LocationEnum.ZURICH));
+            yoga.setLocation(this.locationService.getLocationByName(LocationEnum.KURUKSHETRA));
             offers.add(yoga);
             this.hobbyRepository.save(yoga);
 
@@ -191,7 +191,7 @@ public class HobbyServiceImpl implements HobbyService {
             painting.setBusinessOwner(this.userService.findBusinessOwnerById(3L));
             painting.setPrice(new BigDecimal("40"));
             painting.setImgUrl("https://res.cloudinary.com/duyxug7zo/image/upload/v1649758227/we8fobtgxe4hfebw3s5a.jpg");
-            painting.setLocation(this.locationService.getLocationByName(LocationEnum.ZURICH));
+            painting.setLocation(this.locationService.getLocationByName(LocationEnum.KURUKSHETRA));
             offers.add(painting);
             this.hobbyRepository.save(painting);
         }
